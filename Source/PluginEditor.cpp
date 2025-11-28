@@ -68,13 +68,13 @@ FluidJustIntonationEditor::FluidJustIntonationEditor (FluidJustIntonationProcess
 	soundFontNameLabel.setColour(juce::Label::textColourId, textColour.withAlpha(0.7f));
 	addAndMakeVisible(soundFontNameLabel);
 	
-	presetLabel.setFont(juce::Font(juce::Font::getDefaultSansSerifFontName(), 14.0f, juce::Font::bold));
-	presetLabel.setJustificationType(juce::Justification::centredRight);
-	addAndMakeVisible(presetLabel);
+	// presetLabel.setFont(juce::Font(juce::Font::getDefaultSansSerifFontName(), 14.0f, juce::Font::bold));
+	// presetLabel.setJustificationType(juce::Justification::centredRight);
+	// addAndMakeVisible(presetLabel);
 	
-	presetSelector.onChange = [this] { presetChanged(); };
-	presetSelector.setEnabled(false);
-	addAndMakeVisible(presetSelector);
+	// presetSelector.onChange = [this] { presetChanged(); };
+	// presetSelector.setEnabled(false);
+	// addAndMakeVisible(presetSelector);
 	
 	// Set up the measure root selectors
 	updateMeasureRootSelectors();
@@ -181,10 +181,10 @@ void FluidJustIntonationEditor::resized()
 	soundFontNameLabel.setBounds(sfRow1);
 	
 	// Second row: preset selector
-	auto sfRow2 = soundFontArea.removeFromTop(35);
-	presetLabel.setBounds(sfRow2.removeFromLeft(60));
-	sfRow2.removeFromLeft(10);
-	presetSelector.setBounds(sfRow2.removeFromLeft(300));
+	// auto sfRow2 = soundFontArea.removeFromTop(35);
+	// presetLabel.setBounds(sfRow2.removeFromLeft(60));
+	// sfRow2.removeFromLeft(10);
+	// presetSelector.setBounds(sfRow2.removeFromLeft(300));
 	
 	// Rest of the layout
 	auto topArea = mainArea.removeFromTop(160);
@@ -479,7 +479,7 @@ void FluidJustIntonationEditor::updateSoundFontUI()
 	bool loaded = audioProcessor.isSoundFontLoaded();
 	
 	unloadSoundFontButton.setEnabled(loaded);
-	presetSelector.setEnabled(loaded);
+	// presetSelector.setEnabled(loaded);
 	
 	if (loaded)
 	{
@@ -502,7 +502,7 @@ void FluidJustIntonationEditor::updateSoundFontUI()
 
 void FluidJustIntonationEditor::updatePresetList()
 {
-	presetSelector.clear();
+	// presetSelector.clear();
 	
 	int presetCount = audioProcessor.getPresetCount();
 	
